@@ -49,12 +49,14 @@ public class FriesController : MonoBehaviour
         if(newPosition.x > oldPosition.x)
         {
             print("walk");
+            Renderer.GetComponent<SpriteRenderer>().flipX = true;
             FryAnimator.SetTrigger("Walk");
             characterScale.x = 1;
         }
         else if (newPosition.x < oldPosition.x)
         {
             print("walk");
+            Renderer.GetComponent<SpriteRenderer>().flipX = false;
             FryAnimator.SetTrigger("Walk");
             characterScale.x = -1;
         }
