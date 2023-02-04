@@ -402,7 +402,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 369644629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7481dc3efc554d84d8577ce18f3b43ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f853a368915aa842a6fe7a049d28661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Confirmation_Panel: {fileID: 1597108722}
@@ -896,10 +896,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 740213871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7481dc3efc554d84d8577ce18f3b43ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f853a368915aa842a6fe7a049d28661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Confirmation_Panel: {fileID: 0}
+  Confirmation_Panel: {fileID: 1597108722}
 --- !u!114 &740213874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1273,7 +1273,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 977395104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7481dc3efc554d84d8577ce18f3b43ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f853a368915aa842a6fe7a049d28661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Confirmation_Panel: {fileID: 1597108722}
@@ -1579,8 +1579,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Super Roots
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1704,7 +1704,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1290559443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7481dc3efc554d84d8577ce18f3b43ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f853a368915aa842a6fe7a049d28661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Confirmation_Panel: {fileID: 1597108722}
@@ -1852,10 +1852,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1435045881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7481dc3efc554d84d8577ce18f3b43ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f853a368915aa842a6fe7a049d28661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Confirmation_Panel: {fileID: 0}
+  Confirmation_Panel: {fileID: 1597108722}
 --- !u!114 &1435045884
 MonoBehaviour:
   m_ObjectHideFlags: 0
