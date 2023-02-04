@@ -42,7 +42,7 @@ public class SpecialAttack : MonoBehaviour
     {
         parsnipAttack.Play();
         canSnip = false;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(13);
         canSnip = true;
 
     }

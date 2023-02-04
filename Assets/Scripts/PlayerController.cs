@@ -42,7 +42,13 @@ public class PlayerController : MonoBehaviour
         CurrentHealth -= amount;
         if (CurrentHealth <= 0)
         {
-            Destroy(gameObject);
+            StartCoroutine(dontDieYet());
         }
+    }
+
+    IEnumerator dontDieYet()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 }
