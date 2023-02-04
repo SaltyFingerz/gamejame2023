@@ -3076,6 +3076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 793882707}
   - component: {fileID: 793882706}
+  - component: {fileID: 793882708}
   m_Layer: 0
   m_Name: Tutorial_Trigger_3
   m_TagString: Untagged
@@ -3111,6 +3112,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &793882708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793882705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc82a4ea20de1746930d33dfd81f635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tutorial_To_View: {fileID: 2059305953}
 --- !u!1 &826878087
 GameObject:
   m_ObjectHideFlags: 0
@@ -3402,6 +3416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 901700851}
   - component: {fileID: 901700850}
+  - component: {fileID: 901700852}
   m_Layer: 0
   m_Name: Tutorial_Trigger_2
   m_TagString: Untagged
@@ -3437,6 +3452,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &901700852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901700849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc82a4ea20de1746930d33dfd81f635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tutorial_To_View: {fileID: 1021245630}
 --- !u!1 &921737052
 GameObject:
   m_ObjectHideFlags: 0
@@ -5145,6 +5173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1488538711}
   - component: {fileID: 1488538710}
+  - component: {fileID: 1488538712}
   m_Layer: 0
   m_Name: Tutorial_Trigger_4
   m_TagString: Untagged
@@ -5180,6 +5209,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1488538712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488538709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc82a4ea20de1746930d33dfd81f635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tutorial_To_View: {fileID: 998232638}
 --- !u!1 &1503929624
 GameObject:
   m_ObjectHideFlags: 0
@@ -5369,6 +5411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1586087365}
   - component: {fileID: 1586087364}
+  - component: {fileID: 1586087366}
   m_Layer: 0
   m_Name: Tutorial__Trigger_1
   m_TagString: Untagged
@@ -5404,6 +5447,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1586087366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586087363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc82a4ea20de1746930d33dfd81f635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tutorial_To_View: {fileID: 484973654}
 --- !u!1 &1606273185
 GameObject:
   m_ObjectHideFlags: 0
