@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpecialAttack : MonoBehaviour
 {
     public ParticleSystem parsnipAttack;
-    public GameObject singleParsnip;
+    //public GameObject singleParsnip;
     public static Transform target;
     bool canSnip = true;
     // Start is called before the first frame update
