@@ -22,7 +22,7 @@ public class Pause_Script : MonoBehaviour
     }
     public void Resume()
     {
-        //isPaused = false;
+        Time.timeScale = 1;
         Pause_Menu.SetActive(false);
     }
     // Update is called once per frame
