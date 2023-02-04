@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementConstant = 7f;
     [Range(0, 0.05f)] [SerializeField] private float movementSmoothing = .001f;
     Rigidbody playerRigidBody;
-    [SerializeField]private float maxHealth = 5;
+    [SerializeField]private float maxHealth = 15;
 
     private float CurrentHealth;
     // Start is called before the first frame update
@@ -50,5 +50,10 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
+    }
+
+    public float GetCurrentHealth()
+    {
+        return CurrentHealth;
     }
 }
