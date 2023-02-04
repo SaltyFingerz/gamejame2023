@@ -11,9 +11,12 @@ public class ChickenNugBehaviou : MonoBehaviour
     public GameObject player;
     bool isPlayerInRange = false;
     private float currentCooldown=0;
+    Animator NugAnimator;
+    public GameObject Renderer;
     // Start is called before the first frame update
     void Start()
     {
+        NugAnimator = Renderer.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,7 +31,7 @@ public class ChickenNugBehaviou : MonoBehaviour
             {
                 if (currentCooldown <= 0)
                 {
-                    //CHICKEN NUGGE ATTACK ANIMATION
+                    NugAnimator.SetTrigger("Attack");
                     player.GetComponent<PlayerController>().TakeDamage(Strength);
                     currentCooldown = AttackCooldown;
                 }
@@ -41,11 +44,13 @@ public class ChickenNugBehaviou : MonoBehaviour
 
             if (newPosition.x > oldPosition.x)
             {
-                //Nugge is moving to the right ANIMATION
+                Renderer.GetComponent<SpriteRenderer>().flipX = false;
+                NugAnimator.SetTrigger("Walk");
             }
             else if (newPosition.x < oldPosition.x)
             {
-                //Nugge is moving to the left ANIMATION
+                Renderer.GetComponent<SpriteRenderer>().flipX = true;
+                NugAnimator.SetTrigger("Walk");
             }
         }
     }
