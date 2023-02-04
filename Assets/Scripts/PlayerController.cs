@@ -27,6 +27,15 @@ public class PlayerController : MonoBehaviour
         Vector3 redundantVelocity = Vector3.zero;
         playerRigidBody.velocity = Vector3.SmoothDamp(playerRigidBody.velocity, movementVector, ref redundantVelocity, movementSmoothing);
 
+        if(playerRigidBody.velocity.x>0)
+        {
+            //Player is moving to the right
+        }
+        else if (playerRigidBody.velocity.x<0)
+        {
+            //Player is moving to the left
+        }
+
     }
     public void TakeDamage(float amount)
     {

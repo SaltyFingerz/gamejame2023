@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
 {
-[SerializeField] public GameObject player;
+    [SerializeField] public GameObject player;
     [SerializeField] private float offset;
+    [SerializeField] private float smoothing = 0.0001f;
 
 
     // Update is called once per frame
@@ -16,7 +17,10 @@ public class FollowCamera : MonoBehaviour
         {
             //Follow player
             transform.position = player.transform.position;
-            transform.Translate(Vector3.forward * -offset);
+            Transform requiredTf = transform;
+            requiredTf.Translate(Vector3.forward * -offset);
+
+            transform.position = Vector3.MoveTowards(transform.position,requiredTf.position,smoothing*Time.deltaTime);
         }
     }
 }
