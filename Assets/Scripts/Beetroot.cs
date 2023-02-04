@@ -6,10 +6,8 @@ public class Beetroot : MonoBehaviour
 {
     [SerializeField] private float PunchDamage = 5;
     [SerializeField] private GameObject PunchRange;
-    [SerializeField] private LayerMask layerMask;
 
     [SerializeField] private float GroundPunchDamage = 10;
-    [SerializeField] private GameObject GroundPunchRange;
 
     private List<GameObject> PunchRangeEnemies = new List<GameObject>();
     private List<GameObject> GroundPunchRangeEnemies = new List<GameObject>();

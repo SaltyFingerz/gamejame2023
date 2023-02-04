@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FriesController : Enemy
+public class FriesController : MonoBehaviour
 {
     public float Strength = 2;
     public float MovementSpeed = 5;
