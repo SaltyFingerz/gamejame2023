@@ -9,13 +9,15 @@ public class FriesController : MonoBehaviour
     public float DiveSpeed = 20;
     public float DiveRange = 5;
     private GameObject player;
-
+    Animator FryAnimator;
     bool isLocked = false;
     Vector3 lockedPosition;
+    public GameObject Renderer;
+    public AudioClip deathSquish;
     // Start is called before the first frame update
     void Start()
     {
-
+        FryAnimator = Renderer.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,9 +32,10 @@ public class FriesController : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, MovementSpeed * Time.deltaTime);
                 if(Vector3.Distance(transform.position,player.transform.position) <= DiveRange)
                 {
+                 
                     isLocked = true;
                     lockedPosition = player.transform.position;
-                    //Frie Starts Diving ANIMATION
+                    FryAnimator.SetTrigger("Jump");
                 }
             }
             else
@@ -42,13 +45,21 @@ public class FriesController : MonoBehaviour
             newPosition = transform.position;
         }
 
+        Vector3 characterScale = transform.localScale;
+
         if(newPosition.x > oldPosition.x)
         {
-            //Frie is moving to the right ANIMATION
+            
+            Renderer.GetComponent<SpriteRenderer>().flipX = false;
+            FryAnimator.SetTrigger("Walk");
+            characterScale.x = 1;
         }
         else if (newPosition.x < oldPosition.x)
         {
-            //Frie is moving to the left ANIMATION
+            
+            Renderer.GetComponent<SpriteRenderer>().flipX = true;
+            FryAnimator.SetTrigger("Walk");
+            characterScale.x = -1;
         }
     }
 
@@ -75,6 +86,15 @@ public class FriesController : MonoBehaviour
             collision.gameObject.GetComponent<PlayerController>().TakeDamage(Strength);
         }
         //Frie Dies ANIMATION
+        AudioSource ac = GetComponent<AudioSource>();
+        ac.PlayOneShot(deathSquish);
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        StartCoroutine(dontDieYet());
+    }
+
+    IEnumerator dontDieYet()
+    {
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 }

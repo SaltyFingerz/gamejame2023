@@ -2,19 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum FacingDirection { Right, Left};
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movementConstant = 7f;
     [Range(0, 0.05f)] [SerializeField] private float movementSmoothing = .001f;
     Rigidbody playerRigidBody;
-    [SerializeField]private float maxHealth = 5;
-
+    [SerializeField]private float maxHealth = 25;
+    public GameObject Renderer;
     private float CurrentHealth;
+    public FacingDirection facing;
+
+    public AudioClip deathSquish;
+
     // Start is called before the first frame update
     void Start()
     {
         playerRigidBody = GetComponent<Rigidbody>();
         CurrentHealth = maxHealth;
+        facing = FacingDirection.Right;
     }
 
     // Update is called once per frame
@@ -29,12 +35,23 @@ public class PlayerController : MonoBehaviour
 
         if(playerRigidBody.velocity.x>0)
         {
-            //Player is moving to the right
+            Renderer.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            facing = FacingDirection.Right;
         }
         else if (playerRigidBody.velocity.x<0)
         {
-            //Player is moving to the left
+            Renderer.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            facing = FacingDirection.Left;
         }
+
+       /*if(facing == FacingDirection.Left)
+        {
+            Renderer.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else if (facing == FacingDirection.Right)
+        {
+            Renderer.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }*/
 
     }
     public void TakeDamage(float amount)
@@ -42,7 +59,23 @@ public class PlayerController : MonoBehaviour
         CurrentHealth -= amount;
         if (CurrentHealth <= 0)
         {
-            Destroy(gameObject);
+            StartCoroutine(dontDieYet());
         }
     }
+
+    public GameObject Death_Menu;
+    IEnumerator dontDieYet()
+    {
+        AudioSource ac = GetComponent<AudioSource>();
+        ac.PlayOneShot(deathSquish);
+        yield return new WaitForSeconds(1f);
+        Death_Menu.SetActive(!Death_Menu.activeSelf);
+        Destroy(gameObject);
+    }
+    public float GetCurrentHealth()
+    {
+        return CurrentHealth;
+    }
+
+    
 }

@@ -8,6 +8,7 @@ public class SpecialAttack : MonoBehaviour
     //public GameObject singleParsnip;
     public static Transform target;
     bool canSnip = true;
+    public GameObject SnipUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,15 +26,22 @@ public class SpecialAttack : MonoBehaviour
             StartCoroutine(snipOut());
         }
 
+       if(canSnip)
+        {
+            SnipUI.SetActive(true);
 
-  
+        }
+       else
+            SnipUI.SetActive(false);
+
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
-            print("woo");
+            
             target = other.transform;
         }
     }
@@ -42,7 +50,7 @@ public class SpecialAttack : MonoBehaviour
     {
         parsnipAttack.Play();
         canSnip = false;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(13);
         canSnip = true;
 
     }

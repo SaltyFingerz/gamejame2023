@@ -6,7 +6,7 @@ public class PunchRangeBehaviour : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && !other.isTrigger)
         {
             GetComponentInParent<Beetroot>().AddEnemyToPunchRange(other.gameObject);
         }
@@ -14,7 +14,7 @@ public class PunchRangeBehaviour : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && !other.isTrigger)
         {
             GetComponentInParent<Beetroot>().RemoveEnemyToPunchRange(other.gameObject);
         }
