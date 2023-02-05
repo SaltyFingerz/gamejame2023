@@ -41,14 +41,14 @@ public class PlayerController : MonoBehaviour
             facing = FacingDirection.Left;
         }
 
-        if(facing == FacingDirection.Left)
+       /*if(facing == FacingDirection.Left)
         {
             Renderer.gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
         else if (facing == FacingDirection.Right)
         {
             Renderer.gameObject.GetComponent<SpriteRenderer>().flipX = true;
-        }
+        }*/
 
     }
     public void TakeDamage(float amount)

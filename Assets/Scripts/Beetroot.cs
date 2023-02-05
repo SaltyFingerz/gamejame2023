@@ -85,7 +85,7 @@ public class Beetroot : MonoBehaviour
                     {
                         print("punch");
                         enemy.GetComponent<Enemy>().TakeDamage(PunchDamage);
-                        BeetAnimator.SetTrigger("PunchR");
+                      //  BeetAnimator.SetTrigger("PunchR");
                         GetComponent<PlayerController>().facing = FacingDirection.Right;
                     }
 
@@ -97,7 +97,7 @@ public class Beetroot : MonoBehaviour
                     {
                         print("punch");
                         enemy.GetComponent<Enemy>().TakeDamage(PunchDamage);
-                        BeetAnimator.SetTrigger("PunchL");
+                       // BeetAnimator.SetTrigger("PunchL");
 
                         GetComponent<PlayerController>().facing = FacingDirection.Left;
                     }
@@ -107,13 +107,20 @@ public class Beetroot : MonoBehaviour
              
             
         }
-          if (PunchRangeEnemies.Count == 0) 
+          if (PunchRangeEnemies.Count == 0 && GetComponent<PlayerController>().facing == FacingDirection.Left) 
             {
                 if (mousePos.x - Screen.width / 2 >= 0)
                     BeetAnimator.SetTrigger("PunchR");
                 else
                     BeetAnimator.SetTrigger("PunchL");
             } 
+          else
+        {
+            if (mousePos.x - Screen.width / 2 >= 0)
+                BeetAnimator.SetTrigger("PunchL");
+            else
+                BeetAnimator.SetTrigger("PunchR");
+        }
         //Animation
     }
 

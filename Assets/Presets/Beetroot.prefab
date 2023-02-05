@@ -41,7 +41,7 @@ Transform:
   - {fileID: 3830244429488546154}
   - {fileID: 3830244430012064731}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &3830244428667916314
 Rigidbody:
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breathAttack: {fileID: 7174677267582828884}
+  Renderer: {fileID: 0}
 --- !u!114 &3830244428667916319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +114,8 @@ MonoBehaviour:
   movementConstant: 7
   movementSmoothing: 0.001
   maxHealth: 5
+  Renderer: {fileID: 3830244429947565533}
+  facing: 0
 --- !u!114 &3830244428667916304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,8 +129,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PunchDamage: 5
-  PunchRange: {fileID: 0}
+  PunchRange: {fileID: 3830244429488546153}
   GroundPunchDamage: 10
+  Renderer: {fileID: 3830244429947565533}
 --- !u!1 &3830244428741510565
 GameObject:
   m_ObjectHideFlags: 0
