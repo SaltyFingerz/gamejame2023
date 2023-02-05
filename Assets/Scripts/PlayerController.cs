@@ -60,9 +60,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public GameObject Death_Menu;
     IEnumerator dontDieYet()
     {
         yield return new WaitForSeconds(1f);
+        Death_Menu.SetActive(!Death_Menu.activeSelf);
         Destroy(gameObject);
     }
     public float GetCurrentHealth()
