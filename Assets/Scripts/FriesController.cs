@@ -13,6 +13,7 @@ public class FriesController : MonoBehaviour
     bool isLocked = false;
     Vector3 lockedPosition;
     public GameObject Renderer;
+    public AudioClip deathSquish;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +86,8 @@ public class FriesController : MonoBehaviour
             collision.gameObject.GetComponent<PlayerController>().TakeDamage(Strength);
         }
         //Frie Dies ANIMATION
+        AudioSource ac = GetComponent<AudioSource>();
+        ac.PlayOneShot(deathSquish);
         gameObject.GetComponent<BoxCollider>().enabled = false;
         StartCoroutine(dontDieYet());
     }

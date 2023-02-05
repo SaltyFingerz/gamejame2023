@@ -13,6 +13,10 @@ public class Beetroot : MonoBehaviour
     private List<GameObject> GroundPunchRangeEnemies = new List<GameObject>();
     public GameObject Renderer;
     Animator BeetAnimator;
+
+    public AudioClip punchSound;
+    public AudioClip groundSound;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +36,9 @@ public class Beetroot : MonoBehaviour
         {
             SecondaryAttack();
             BeetAnimator.SetTrigger("Ground");
+
+            AudioSource ac = GetComponent<AudioSource>();
+            ac.PlayOneShot(groundSound);
         }
 
         if (GroundPunchRangeEnemies.Count > 0)
@@ -113,13 +120,18 @@ public class Beetroot : MonoBehaviour
                     BeetAnimator.SetTrigger("PunchR");
                 else
                     BeetAnimator.SetTrigger("PunchL");
-            } 
+
+            AudioSource ac = GetComponent<AudioSource>();
+            ac.PlayOneShot(punchSound);
+        } 
           else
         {
             if (mousePos.x - Screen.width / 2 >= 0)
                 BeetAnimator.SetTrigger("PunchL");
             else
                 BeetAnimator.SetTrigger("PunchR");
+            AudioSource ac = GetComponent<AudioSource>();
+            ac.PlayOneShot(punchSound);
         }
         //Animation
     }

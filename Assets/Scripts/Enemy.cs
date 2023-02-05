@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     bool enemyVulnerableToBreath = true;
     bool enemyVulnerableToSnips = true;
     private float currentHealth;
+    public AudioClip deathSquish;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +18,11 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentHealth <= 0)
+        /*if (currentHealth <= 0)
         {
-            gameObject.SetActive(false);
-        }
+            StartCoroutine(dontDieYet());
+           // gameObject.SetActive(false);
+        }*/
     }
 
     //Returns false if object is dead
@@ -29,7 +31,7 @@ public class Enemy : MonoBehaviour
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            StartCoroutine(dontDieYet());
         }
     }
 
@@ -63,4 +65,12 @@ public class Enemy : MonoBehaviour
         enemyVulnerableToSnips = true;
     }
 
+    IEnumerator dontDieYet()
+    {
+        AudioSource ac = GetComponent<AudioSource>();
+        ac.PlayOneShot(deathSquish);
+        yield return new WaitForSeconds(1);
+        
+        Destroy(gameObject);
+    }
 }

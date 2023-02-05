@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class ChickenDetectionRange : MonoBehaviour
 {
+    public AudioClip aggroSound;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             GetComponentInParent<ChickenNugBehaviou>().isPlayerInRange = true;
+            AudioSource ac = GetComponent<AudioSource>();
+            ac.PlayOneShot(aggroSound);
         }
     }
 

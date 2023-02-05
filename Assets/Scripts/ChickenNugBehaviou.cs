@@ -13,6 +13,9 @@ public class ChickenNugBehaviou : MonoBehaviour
     private float currentCooldown=0;
     Animator NugAnimator;
     public GameObject Renderer;
+    public AudioClip aggroSound;
+
+    public AudioClip attackSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +37,14 @@ public class ChickenNugBehaviou : MonoBehaviour
                     NugAnimator.SetTrigger("Attack");
                     player.GetComponent<PlayerController>().TakeDamage(Strength);
                     currentCooldown = AttackCooldown;
+                    AudioSource ac = GetComponent<AudioSource>();
+                    ac.PlayOneShot(attackSound);
                 }
             }
             else
             {
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Speed * Time.deltaTime);
+                
             }
             newPosition = transform.position;
 
@@ -46,11 +52,13 @@ public class ChickenNugBehaviou : MonoBehaviour
             {
                 Renderer.GetComponent<SpriteRenderer>().flipX = false;
                 NugAnimator.SetTrigger("Walk");
+               
             }
             else if (newPosition.x < oldPosition.x)
             {
                 Renderer.GetComponent<SpriteRenderer>().flipX = true;
                 NugAnimator.SetTrigger("Walk");
+               
             }
         }
     }

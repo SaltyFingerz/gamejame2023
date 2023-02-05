@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     public GameObject Renderer;
     private float CurrentHealth;
     public FacingDirection facing;
+
+    public AudioClip deathSquish;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +65,8 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator dontDieYet()
     {
+        AudioSource ac = GetComponent<AudioSource>();
+        ac.PlayOneShot(deathSquish);
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
@@ -69,4 +74,6 @@ public class PlayerController : MonoBehaviour
     {
         return CurrentHealth;
     }
+
+    
 }
