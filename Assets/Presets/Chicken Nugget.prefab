@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 8296676452490842685}
   - component: {fileID: 8296676452490842686}
   - component: {fileID: 2898229550912669942}
-  - component: {fileID: 1825429057138419771}
+  - component: {fileID: 3080258903207318945}
   - component: {fileID: 3535738240247010146}
   - component: {fileID: 1081542634}
   - component: {fileID: 1040992628924973756}
@@ -195,7 +195,7 @@ Transform:
   - {fileID: 8296676453445809690}
   - {fileID: 7053497581278649303}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8296676452490842685
 Rigidbody:
@@ -239,7 +239,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 6.87
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1825429057138419771
+--- !u!114 &3080258903207318945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,10 +248,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8296676452490842680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4005b39c37d1d824980775bddb0f9be5, type: 3}
+  m_Script: {fileID: 11500000, guid: 9863832344e992e43be86771c86319a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 7
+  maxHealth: 5
   deathSquish: {fileID: 8300000, guid: 27dada6d79b78dd46a80da20b9117242, type: 3}
 --- !u!114 &3535738240247010146
 MonoBehaviour:

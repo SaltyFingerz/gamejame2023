@@ -218,37 +218,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7831424573326805791, guid: 357f71b53e71a9e4cad4f7778cf6e593, type: 3}
   m_PrefabInstance: {fileID: 127770447276967894}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &516260220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7884432558095879369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39a4d630a89bd964bae71bb7706b9e38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Strength: 2
-  MovementSpeed: 5
-  DiveSpeed: 10
-  DiveRange: 5
-  Renderer: {fileID: 148651223}
-  deathSquish: {fileID: 8300000, guid: 27dada6d79b78dd46a80da20b9117242, type: 3}
---- !u!114 &512756060435363530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7884432558095879369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4005b39c37d1d824980775bddb0f9be5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 5
 --- !u!82 &5460726793641303542
 AudioSource:
   m_ObjectHideFlags: 0
@@ -345,6 +314,38 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &516260220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7884432558095879369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a4d630a89bd964bae71bb7706b9e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Strength: 2
+  MovementSpeed: 5
+  DiveSpeed: 10
+  DiveRange: 5
+  Renderer: {fileID: 148651223}
+  deathSquish: {fileID: 8300000, guid: 27dada6d79b78dd46a80da20b9117242, type: 3}
+--- !u!114 &6904575387151849474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7884432558095879369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9863832344e992e43be86771c86319a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  deathSquish: {fileID: 8300000, guid: 27dada6d79b78dd46a80da20b9117242, type: 3}
 --- !u!4 &7884432558095879373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7831424573326805787, guid: 357f71b53e71a9e4cad4f7778cf6e593, type: 3}

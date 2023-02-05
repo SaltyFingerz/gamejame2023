@@ -21,7 +21,7 @@ public class BossMusic : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             print("play");
-            GameObject.FindWithTag("music").SetActive(false);
+           // GameObject.FindWithTag("music").SetActive(false);
             GetComponent<AudioSource>().Play();
         }
     }

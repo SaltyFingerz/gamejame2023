@@ -16,7 +16,12 @@ public class Beetroot : MonoBehaviour
 
     public AudioClip punchSound;
     public AudioClip groundSound;
-    
+    public float PunchCooldown = 0.8f;
+    public float GroundPunchCooldown = 2;
+
+    float currentPunchCooldown = 0;
+    float currentGroundPunchCooldown = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,19 +31,28 @@ public class Beetroot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentPunchCooldown -= Time.deltaTime;
+        GroundPunchCooldown -= Time.deltaTime;
         if (Input.GetMouseButtonDown(0))
         {
-            MainAttack(Input.mousePosition);
-            
+            if (currentPunchCooldown <= 0)
+            {
+                MainAttack(Input.mousePosition);
+                currentPunchCooldown = PunchCooldown;
+            }
         }
 
         if (Input.GetMouseButtonDown(1))
         {
-            SecondaryAttack();
-            BeetAnimator.SetTrigger("Ground");
+            if (currentGroundPunchCooldown <= 0)
+            {
+                SecondaryAttack();
+                BeetAnimator.SetTrigger("Ground");
 
-            AudioSource ac = GetComponent<AudioSource>();
-            ac.PlayOneShot(groundSound);
+                AudioSource ac = GetComponent<AudioSource>();
+                ac.PlayOneShot(groundSound);
+                currentGroundPunchCooldown = GroundPunchCooldown;
+            }
         }
 
         if (GroundPunchRangeEnemies.Count > 0)
