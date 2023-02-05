@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Pause_Script : MonoBehaviour
 {
     public GameObject Pause_Menu;
+    public GameObject Death_Menu;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class Pause_Script : MonoBehaviour
     {
         Time.timeScale = 1;
         Pause_Menu.SetActive(false);
+        Death_Menu.SetActive(false);
     }
     // Update is called once per frame
     void Update()
