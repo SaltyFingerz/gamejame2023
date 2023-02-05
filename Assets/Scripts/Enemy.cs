@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
     IEnumerator damageEnemySnips()
     {
         print("damagingenemy");
-        currentHealth -= 4;
+        currentHealth -= 7;
         enemyVulnerableToSnips = false;
         yield return new WaitForSeconds(2);
         enemyVulnerableToSnips = true;

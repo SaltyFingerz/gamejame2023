@@ -838,10 +838,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fries
       objectReference: {fileID: 0}
-    - target: {fileID: 7884432558095879369, guid: 1e26acc30b1c92044b772fb50314d504, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7884432558095879373, guid: 1e26acc30b1c92044b772fb50314d504, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1843,10 +1839,6 @@ PrefabInstance:
     - target: {fileID: 8296676452490842680, guid: 2059b2aa2da916b4db18247ecc5a4d74, type: 3}
       propertyPath: m_Name
       value: Chicken Nugget
-      objectReference: {fileID: 0}
-    - target: {fileID: 8296676452490842680, guid: 2059b2aa2da916b4db18247ecc5a4d74, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8296676452490842684, guid: 2059b2aa2da916b4db18247ecc5a4d74, type: 3}
       propertyPath: m_RootOrder

@@ -8,7 +8,15 @@ public class ChickenDetectionRange : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            gameObject.GetComponentInParent<ChickenNugBehaviou>().player = other.gameObject;
+            GetComponentInParent<ChickenNugBehaviou>().isPlayerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            GetComponentInParent<ChickenNugBehaviou>().isPlayerInRange = false;
         }
     }
 }

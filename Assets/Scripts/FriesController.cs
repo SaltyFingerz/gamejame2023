@@ -91,7 +91,7 @@ public class FriesController : MonoBehaviour
 
     IEnumerator dontDieYet()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }
 }

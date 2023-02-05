@@ -6,7 +6,7 @@ public class GroundPunchRangeBehaviour : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && !other.isTrigger)
         {
             GetComponentInParent<Beetroot>().AddEnemyToGroundPunchRange(other.gameObject);
         }
@@ -14,7 +14,7 @@ public class GroundPunchRangeBehaviour : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && !other.isTrigger)
         {
             GetComponentInParent<Beetroot>().RemoveEnemyToGroundPunchRange(other.gameObject);
         }

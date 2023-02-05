@@ -9,7 +9,7 @@ public class ChickenNugBehaviou : MonoBehaviour
     public float AttackCooldown = 2;
 
     public GameObject player;
-    bool isPlayerInRange = false;
+    public bool isPlayerInRange = false;
     private float currentCooldown=0;
     Animator NugAnimator;
     public GameObject Renderer;
@@ -54,20 +54,12 @@ public class ChickenNugBehaviou : MonoBehaviour
             }
         }
     }
-
     private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            isPlayerInRange = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            isPlayerInRange = false;
+            gameObject.GetComponentInParent<ChickenNugBehaviou>().player = other.gameObject;
         }
     }
+   
 }
