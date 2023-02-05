@@ -33,6 +33,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void AddHealth(float amount)
+    {
+        currentHealth += amount;
+    }
+
 
     void OnParticleCollision(GameObject TargetedParticle)
     {
