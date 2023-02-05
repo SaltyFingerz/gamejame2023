@@ -31,7 +31,7 @@ public class FriesController : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, MovementSpeed * Time.deltaTime);
                 if(Vector3.Distance(transform.position,player.transform.position) <= DiveRange)
                 {
-                    print("jump");
+                 
                     isLocked = true;
                     lockedPosition = player.transform.position;
                     FryAnimator.SetTrigger("Jump");
@@ -48,15 +48,15 @@ public class FriesController : MonoBehaviour
 
         if(newPosition.x > oldPosition.x)
         {
-            print("walk");
-            Renderer.GetComponent<SpriteRenderer>().flipX = true;
+            
+            Renderer.GetComponent<SpriteRenderer>().flipX = false;
             FryAnimator.SetTrigger("Walk");
             characterScale.x = 1;
         }
         else if (newPosition.x < oldPosition.x)
         {
-            print("walk");
-            Renderer.GetComponent<SpriteRenderer>().flipX = false;
+            
+            Renderer.GetComponent<SpriteRenderer>().flipX = true;
             FryAnimator.SetTrigger("Walk");
             characterScale.x = -1;
         }
@@ -91,7 +91,7 @@ public class FriesController : MonoBehaviour
 
     IEnumerator dontDieYet()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 }
