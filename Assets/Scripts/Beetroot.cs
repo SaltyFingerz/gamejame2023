@@ -11,11 +11,12 @@ public class Beetroot : MonoBehaviour
 
     private List<GameObject> PunchRangeEnemies = new List<GameObject>();
     private List<GameObject> GroundPunchRangeEnemies = new List<GameObject>();
-
+    public GameObject Renderer;
+    Animator BeetAnimator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        BeetAnimator = Renderer.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class Beetroot : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             SecondaryAttack();
+            BeetAnimator.SetTrigger("Ground");
         }
 
         if (GroundPunchRangeEnemies.Count > 0)
@@ -74,48 +76,44 @@ public class Beetroot : MonoBehaviour
         {
             if (enemy)
             {
-                if(Mathf.Abs(mousePos.x - Screen.width/2) > Mathf.Abs(mousePos.y - Screen.height / 2))
-                {
-                    if(mousePos.x - Screen.width / 2>=0)
-                    {
-                        //Right
-                        if(enemy.transform.position.x >= transform.position.x)
-                        {
-                            enemy.GetComponent<Enemy>().TakeDamage(PunchDamage);
-                        }                        
 
-                    }
-                    else
+
+                if (mousePos.x - Screen.width / 2 >= 0)
+                {
+                    //Right
+                    if (enemy.transform.position.x >= transform.position.x)
                     {
-                        //Left
-                        if (enemy.transform.position.x < transform.position.x)
-                        {
-                            enemy.GetComponent<Enemy>().TakeDamage(PunchDamage);
-                        }
+                        print("punch");
+                        enemy.GetComponent<Enemy>().TakeDamage(PunchDamage);
+                        BeetAnimator.SetTrigger("PunchR");
+                        GetComponent<PlayerController>().facing = FacingDirection.Right;
                     }
+
                 }
                 else
                 {
-                    if (mousePos.y - Screen.height / 2 <= 0)
+                    //Left
+                    if (enemy.transform.position.x < transform.position.x)
                     {
-                        //Down
-                        if (enemy.transform.position.z <= transform.position.z)
-                        {
-                            enemy.GetComponent<Enemy>().TakeDamage(PunchDamage);
-                        }
-                    }
-                    else
-                    {
-                        //Up
-                        if (enemy.transform.position.z > transform.position.z)
-                        {
-                            enemy.GetComponent<Enemy>().TakeDamage(PunchDamage);
-                        }
+                        print("punch");
+                        enemy.GetComponent<Enemy>().TakeDamage(PunchDamage);
+                        BeetAnimator.SetTrigger("PunchL");
+
+                        GetComponent<PlayerController>().facing = FacingDirection.Left;
                     }
                 }
+              
             }
+             
+            
         }
-           
+          if (PunchRangeEnemies.Count == 0) 
+            {
+                if (mousePos.x - Screen.width / 2 >= 0)
+                    BeetAnimator.SetTrigger("PunchR");
+                else
+                    BeetAnimator.SetTrigger("PunchL");
+            } 
         //Animation
     }
 
