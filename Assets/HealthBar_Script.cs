@@ -18,8 +18,8 @@ public class HealthBar_Script : MonoBehaviour
 
     private void Update()
     {
-       // DisplayCurrentHealth = Player.GetCurrentHealth();
-       // HealthBar.fillAmount = DisplayCurrentHealth / MaximumHealth;
+       DisplayCurrentHealth = Player.GetCurrentHealth();
+       HealthBar.fillAmount = DisplayCurrentHealth / MaximumHealth;
     }
 
 }

@@ -65,4 +65,8 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
+    public float GetCurrentHealth()
+    {
+        return CurrentHealth;
+    }
 }
