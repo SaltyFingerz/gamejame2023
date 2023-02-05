@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossMusic : MonoBehaviour
 {
+    public GameObject bossBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class BossMusic : MonoBehaviour
             print("play");
            // GameObject.FindWithTag("music").SetActive(false);
             GetComponent<AudioSource>().Play();
+            bossBar.SetActive(true);
         }
     }
 }

@@ -62,9 +62,10 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(dontDieYet());
         }
     }
-
+    public GameObject DeathMenu;
     IEnumerator dontDieYet()
     {
+        DeathMenu.SetActive(!DeathMenu.activeSelf);
         AudioSource ac = GetComponent<AudioSource>();
         ac.PlayOneShot(deathSquish);
         yield return new WaitForSeconds(1f);
