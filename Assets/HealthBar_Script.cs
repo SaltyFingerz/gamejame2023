@@ -7,7 +7,7 @@ public class HealthBar_Script : MonoBehaviour
 {
     public Image HealthBar;
     public float DisplayCurrentHealth;
-    public float MaximumHealth = 15f;
+    public float MaximumHealth = 25f;
     PlayerController Player;
 
     private void Start()
