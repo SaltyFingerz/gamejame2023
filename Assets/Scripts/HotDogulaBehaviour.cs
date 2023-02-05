@@ -7,18 +7,19 @@ public class HotDogulaBehaviour : MonoBehaviour
 {
     public GameObject BunAttackRange;
     public GameObject GrillRollRange;
-    public float maxHealth = 100;
     public float TranformationHealth = 50;
     public float AttackCooldown = 7;
 
-    private float currentHealth;
     private float currentAttackCooldown=0;
     private AttackEnum currentAttack;
+    bool Transformed = false;
+    Animator DogulaAnimator;
+    public GameObject Renderer;
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
         currentAttack = AttackEnum.None;
+        DogulaAnimator = Renderer.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,13 +27,19 @@ public class HotDogulaBehaviour : MonoBehaviour
     {
         if (currentAttackCooldown <= 0)
         {
-            if (maxHealth > TranformationHealth)
+            if (GetComponent<Enemy>().GetHealth() > TranformationHealth)
             {
                 currentAttack = (AttackEnum)Random.Range(0, 2);
             }
             else
             {
                 currentAttack = (AttackEnum)Random.Range(0, 5);
+
+                if(!Transformed)
+                {
+                    DogulaAnimator.SetTrigger("Transform");
+                    Transformed = true;
+                }
             }
 
             currentAttackCooldown = AttackCooldown;

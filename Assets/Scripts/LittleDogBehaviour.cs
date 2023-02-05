@@ -11,6 +11,7 @@ public class LittleDogBehaviour : MonoBehaviour
 
     private GameObject player;
     private GameObject warning;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,8 @@ public class LittleDogBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 newPosition = Vector3.zero, oldPosition = Vector3.zero;
+        oldPosition = transform.position;
         if(Vector3.Distance(transform.position,targetLocation)<=1)
         {
             //Explode
@@ -35,6 +38,23 @@ public class LittleDogBehaviour : MonoBehaviour
         {
             //Move
             transform.position = Vector3.MoveTowards(transform.position, targetLocation, Speed * Time.deltaTime);
+        }
+
+        newPosition = transform.position;
+
+        if (newPosition.x > oldPosition.x)
+        {
+
+            GetComponent<SpriteRenderer>().flipX = false;
+            
+           
+        }
+        else if (newPosition.x < oldPosition.x)
+        {
+
+            GetComponent<SpriteRenderer>().flipX = true;
+            
+           
         }
     }
 

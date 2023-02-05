@@ -348,9 +348,17 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7866151700840691807, guid: e5e134e33fca042448ad0a5949768ebd, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866151700840691807, guid: e5e134e33fca042448ad0a5949768ebd, type: 3}
       propertyPath: deathSquish
       value: 
       objectReference: {fileID: 8300000, guid: 27dada6d79b78dd46a80da20b9117242, type: 3}
+    - target: {fileID: 8881732080358123928, guid: e5e134e33fca042448ad0a5949768ebd, type: 3}
+      propertyPath: Renderer
+      value: 
+      objectReference: {fileID: 702571608}
     - target: {fileID: 8881732080358123928, guid: e5e134e33fca042448ad0a5949768ebd, type: 3}
       propertyPath: BunAttackRange
       value: 
@@ -3936,6 +3944,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685297271}
   m_CullTransparentMesh: 1
+--- !u!1 &702571608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3933692161435765721, guid: e5e134e33fca042448ad0a5949768ebd, type: 3}
+  m_PrefabInstance: {fileID: 57814545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &702571611
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702571608}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 49ac76c574399694ca593f4c129b5092, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &703057621
 GameObject:
   m_ObjectHideFlags: 0
@@ -4893,7 +4926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8345889252957808942, guid: 5f30ba71a6e5d7a4f95b1d68a103d23c, type: 3}
       propertyPath: m_Size.z
-      value: 29.6
+      value: 25.55
       objectReference: {fileID: 0}
     - target: {fileID: 8345889252957808943, guid: 5f30ba71a6e5d7a4f95b1d68a103d23c, type: 3}
       propertyPath: m_RootOrder
@@ -7979,7 +8012,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7644793545046247063, guid: 1042c7ddfe5577d4bb9159847a25f3f6, type: 3}
       propertyPath: m_Size.x
-      value: 1.4
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7644793545046247063, guid: 1042c7ddfe5577d4bb9159847a25f3f6, type: 3}
       propertyPath: m_Center.x
