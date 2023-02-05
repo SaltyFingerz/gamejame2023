@@ -10,30 +10,35 @@ public class Button_Script : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         AudioSource ac = GetComponent<AudioSource>();
+        SceneManager.LoadScene(sceneName);
        
     }
 
     public void ExitGame()
     {
         AudioSource ac = GetComponent<AudioSource>();
-        
+        Application.Quit();
+
     }
 
     public void enable_confirmation()
     {
         AudioSource ac = GetComponent<AudioSource>();
+        Confirmation_Panel.SetActive(!Confirmation_Panel.activeSelf);
        
     }
 
     public void disable_confirmation()
     {
         AudioSource ac = GetComponent<AudioSource>();
-      
+        Confirmation_Panel.SetActive(!Confirmation_Panel.activeSelf);
+
+
     }
     // Start is called before the first frame update
     void Start()
     {
-
+        Confirmation_Panel.SetActive(false);
     }
 
 
