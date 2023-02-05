@@ -9,7 +9,7 @@ public class Pause_Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Time.timeScale = 1;
     }
     public void LoadScene(string sceneName)
     {
