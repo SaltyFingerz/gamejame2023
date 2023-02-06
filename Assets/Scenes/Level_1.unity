@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -347,9 +347,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4480400292877371382, guid: e5e134e33fca042448ad0a5949768ebd, type: 3}
+      propertyPath: Renderer
+      value: 
+      objectReference: {fileID: 702571608}
+    - target: {fileID: 7821272846907418871, guid: e5e134e33fca042448ad0a5949768ebd, type: 3}
+      propertyPath: TornadoToSpawn
+      value: 
+      objectReference: {fileID: 2122733695024280643, guid: 527aa90ec08fc3642b0fb9a5476cf4ac, type: 3}
     - target: {fileID: 7866151700840691807, guid: e5e134e33fca042448ad0a5949768ebd, type: 3}
       propertyPath: maxHealth
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7866151700840691807, guid: e5e134e33fca042448ad0a5949768ebd, type: 3}
       propertyPath: deathSquish
@@ -369,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 2071153433}
     - target: {fileID: 8881732080358123928, guid: e5e134e33fca042448ad0a5949768ebd, type: 3}
       propertyPath: TranformationHealth
-      value: 98
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -4754,7 +4762,7 @@ MonoBehaviour:
   MaximumHealth: 30
   dogula: {fileID: 2061857619}
   DogulaName: {fileID: 726442612}
-  AlugodName: {fileID: 726442612}
+  AlugodName: {fileID: 361473330}
 --- !u!1 &739666279
 GameObject:
   m_ObjectHideFlags: 0
@@ -6060,10 +6068,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 1108070945}
   DisplayCurrentHealth: 0
-  MaximumHealth: 30
+  MaximumHealth: 100
   dogula: {fileID: 2061857619}
-  DogulaName: {fileID: 0}
-  AlugodName: {fileID: 0}
+  DogulaName: {fileID: 726442612}
+  AlugodName: {fileID: 361473330}
 --- !u!114 &1108070945
 MonoBehaviour:
   m_ObjectHideFlags: 0

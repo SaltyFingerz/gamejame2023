@@ -12,23 +12,26 @@ public class BossBar : MonoBehaviour
     public GameObject DogulaName;
     public GameObject AlugodName;
 
+
     private void Start()
     {
         DogulaName.SetActive(true);
         AlugodName.SetActive(false);
 
         HealthBar = GetComponent<Image>();
-        DisplayCurrentHealth = dogula.GetComponent<Enemy>().GetHealth();
+       
     }
 
     private void Update()
     {
+        DisplayCurrentHealth = dogula.GetComponent<Enemy>().GetHealth();
         HealthBar.fillAmount = DisplayCurrentHealth / MaximumHealth;
-        if (HealthBar.fillAmount <= (.5 * MaximumHealth))
+        if (DisplayCurrentHealth <= 70f)
         {
-            DogulaName.SetActive(!DogulaName.activeSelf);
-            AlugodName.SetActive(!AlugodName.activeSelf);
-
+            DogulaName.SetActive(false);
+            AlugodName.SetActive(true);
+            
         }
+      
     }
 }

@@ -17,10 +17,13 @@ public class DracBite : MonoBehaviour
     Vector3 originalPos;
     bool isZooming = false;
     Vector3 nextLockedPos;
+    public GameObject Renderer;
+    Animator BiteAnimator;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+       BiteAnimator = Renderer.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -58,6 +61,8 @@ public class DracBite : MonoBehaviour
 
                 if(Vector3.Distance(transform.position,nextLockedPos)<1)
                 {
+                    //
+                    BiteAnimator.SetTrigger("Bite");
                     currentAmountOfZooms++;
                     isZooming = false;
                     nextLockedPos = player.transform.position;
