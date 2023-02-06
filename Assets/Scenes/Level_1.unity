@@ -2356,6 +2356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossBar: {fileID: 739666279}
+  bossMusic: {fileID: 8300000, guid: 6ea61c7c5ea90fd47b7676aa7a6f26b1, type: 3}
 --- !u!82 &383813287
 AudioSource:
   m_ObjectHideFlags: 0
